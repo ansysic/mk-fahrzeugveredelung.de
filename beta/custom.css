@@ -76,18 +76,6 @@ body {
     color: whitesmoke
 }
 
-.navbar-toggler {
-    border: none !important;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none !important;
-}
-
-.nav-link {
-    color: rgb(255, 255, 255) !important;
-}
-
 video {
     position: absolute;
     top: 0;
@@ -96,18 +84,4 @@ video {
     height: 100vh;
     object-fit: cover;
     z-index: -1;
-}
-
-.mb-40vh {
-    margin-bottom: 40vh;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.527) 0%, rgba(0, 0, 0, 0) 100%);
 }

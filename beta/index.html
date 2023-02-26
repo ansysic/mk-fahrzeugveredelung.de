@@ -10,49 +10,65 @@
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <!-- <div class="container">
-        <nav class="navbar navbar-expand-md">
-            <div class="container-fluid d-flex align-items-center">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <div class="d-flex align-items-center navbar-nav">
-                            <a href="#" class="nav-link fw-bold" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Impressum</a>
-                            <a href="#" class="nav-link fw-bold" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal2">Datenschutzerkl&auml;rung</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div> -->
 
+    <section id="landing">
+        <!-- VIDEO -->
+        <video autoplay playsinline loop muted>
+            <source src="video/header.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-    <!-- VIDEO -->
-    <video autoplay playsinline loop muted>
-        <source src="video/header.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <div class="overlay"></div>
-
-    <div class="container-fluid vh-100">
-        <div class="row vh-100 align-items-center">
-            <div class="col-12 text-center">
-                <img class="img-fluid" src="../img/mk-logo-small-white-font.webp" alt="Logo des Unternehmens"
-                    style="width: 50vw; max-width: 300px;"></h1>
-            </div>
+        <div class="container-fluid vh-100">
+            <div class="row vh-100 align-items-center">
                 <div class="col-12 text-center">
-                    <button type="button" class="fw-bold btn btn-outline-light">MEHR ERFAHREN ↓</button>
+                    <img class="img-fluid" src="../img/mk-logo-small-white-font.webp" alt="Logo des Unternehmens"
+                        style="width: 50vw; max-width: 300px;"></h1>
+                </div>
+                <div class="col-12 text-center">
+                    <p>
+                        <a href="#about">
+                            <button type="button" class="fw-bold btn btn-light"
+                                style="width: 50vw; max-width: 300px;">MEHR
+                                ERFAHREN</button>
+                        </a>
+                    </p>
+                    <p>
+                        <button type="button" class="fw-bold btn btn-outline-light"
+                            style="width: 50vw; max-width: 300px;">KONTAKT</button>
+                    </p>
                 </div>
             </div>
-    </div>
+        </div>
+    </section>
+
+    <section id="about" style="background-color: white; color: black">
+        <div class="container" style="padding-top: 100px; padding-bottom: 100px;">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <h4 class="fw-bold">🏠&nbsp;&nbsp;Über uns</h4>
+                    <h1 class="fw-bold mt-5">Herzlich willkommen bei MK Fahrzeugveredelung.</h1>
+                    <p class="text-muted h5 pt-4">Wir sind spezialisiert auf die Veredelung und Pflege von Autos, um das bestmögliche Aussehen und den
+                        höchsten Schutz für Ihr Fahrzeug zu bieten. Wir verstehen, dass Ihr Auto mehr als nur ein
+                        Fortbewegungsmittel ist - es ist eine Investition und ein Ausdruck Ihrer Persönlichkeit.</p>
+        
+                </div>
+            </div>
+
+
+            <!-- <p>Deshalb legen wir großen Wert auf die bestmögliche Pflege und Veredelung Ihres Fahrzeugs. Wir bieten
+                eine Vielzahl von Dienstleistungen an, um Ihr Auto in perfektem Zustand zu halten, einschließlich:
+            </p>
+            <ul>
+                <li>Fahrzeugpflege</li>
+                <li>Lackaufbereitung</li>
+                <li>Keramikversiegelung</li>
+                <li>und mehr</li>
+            </ul>
+            <p>Schauen Sie sich gerne auf unserer Webseite um und entdecken Sie, wie wir Ihnen helfen können, das Beste
+                aus Ihrem Fahrzeug herauszuholen!</p>
+            </p> -->
+        </div>
+    </section>
 
 
     <script src="js/bootstrap.bundle.min.js"></script>
