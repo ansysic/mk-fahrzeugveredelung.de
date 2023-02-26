@@ -11,13 +11,12 @@
 
 <body>
 
-    <section id="landing">
+    <section id="landing-video">
         <!-- VIDEO -->
         <video autoplay playsinline loop muted>
             <source src="video/header.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-
         <div class="container-fluid vh-100">
             <div class="row vh-100 align-items-center">
                 <div class="col-12 ps-5">
@@ -31,47 +30,71 @@
                         </a>
                     </p>
                     <p>
-                        <button type="button" class="fw-bold btn btn-outline-light"
-                            style="width: 50vw; max-width: 300px;">KONTAKT</button>
+                        <a href="#contact">
+                            <button type="button" class="fw-bold btn btn-outline-light"
+                                style="width: 50vw; max-width: 300px;">KONTAKT</button>
+                        </a>
                     </p>
-
                 </div>
-                <!-- <div class="col-12 ps-5">
-                </div> -->
             </div>
         </div>
     </section>
 
-    <section id="about" style="background-color: white; color: rgb(0, 0, 0)">
+
+    <section id="about" class="" style="background-color: white; color:black">
         <div class="container" style="padding-top: 100px; padding-bottom: 100px;">
-            <div class="row">
-                <div class="col-12 col-lg-12">
-                    <!-- <h4 class="fw-bold">🏠&nbsp;&nbsp;Über uns</h4> -->
-                    <h1 class="fw-bold pt-3">Herzlich willkommen bei MK Fahrzeugveredelung.</h1>
-                    <p class="text-muted pt-4">Wir sind spezialisiert auf die Veredelung und Pflege von Autos, um das
-                        bestmögliche Aussehen und den
-                        höchsten Schutz für Ihr Fahrzeug zu bieten. Wir verstehen, dass Ihr Auto mehr als nur ein
-                        Fortbewegungsmittel ist - es ist eine Investition und ein Ausdruck Ihrer Persönlichkeit.</p>
+            <div class="row justify-content-center">
+                <div class="col-11 col-lg-10 p-4" style="background-color: rgba(255, 255, 255, 0.87);">
+                    <h1 class="fw-bold pt-3">Herzlich willkommen bei unserer Autoveredelung!</h1>
+                    <p class="pt-4 text-muted">Wir sind ein erfahrenes Team von Autoliebhabern und unser Ziel ist es,
+                        Ihrem Fahrzeug den Glanz
+                        und die Sauberkeit zurückzugeben, die es verdient. Wir bieten eine breite Palette von
+                        Dienstleistungen an, um Ihr Fahrzeug wieder auf Vordermann zu bringen - von einer gründlichen
+                        Innen- und Außenreinigung über eine intensive Lackpolitur bis hin zur Aufbereitung von
+                        Ledersitzen und Armaturenbrettern.</p>
+                    <p class="text-muted">Wir arbeiten mit den besten Produkten und Technologien, um Ihr Fahrzeug in
+                        neuem Glanz erstrahlen
+                        zu lassen. Unsere Arbeit ist nicht nur eine Leidenschaft, sondern auch eine Kunst. Wir sind
+                        bestrebt, jedem Fahrzeug eine individuelle Behandlung zu geben, um das bestmögliche Ergebnis zu
+                        erzielen.</p>
+                    <p class="text-muted">Wir freuen uns, Sie auf unserer Webseite begrüßen zu dürfen und Ihnen unsere
+                        Dienstleistungen
+                        näherbringen zu können.</p>
+                    <div id="carouselExample" class="carousel slide pt-4" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="5000">
+                                <img src="img/rekord.jpg" class="d-block w-100" alt="Opel Rekord">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/brake.webp" class="d-block w-100" alt="Bremssättel">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/exhaust.jpg" class="d-block w-100" alt="Auspuff">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/fluids.jpg" class="d-block w-100" alt="Reinigungsmittel">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/tools.jpg" class="d-block w-100" alt="Werkzeug">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
             </div>
-
-
-            <!-- <p>Deshalb legen wir großen Wert auf die bestmögliche Pflege und Veredelung Ihres Fahrzeugs. Wir bieten
-                eine Vielzahl von Dienstleistungen an, um Ihr Auto in perfektem Zustand zu halten, einschließlich:
-            </p>
-            <ul>
-                <li>Fahrzeugpflege</li>
-                <li>Lackaufbereitung</li>
-                <li>Keramikversiegelung</li>
-                <li>und mehr</li>
-            </ul>
-            <p>Schauen Sie sich gerne auf unserer Webseite um und entdecken Sie, wie wir Ihnen helfen können, das Beste
-                aus Ihrem Fahrzeug herauszuholen!</p>
-            </p> -->
         </div>
     </section>
 
-    <section id="pricing" class="">
+    <section id="pricing" class="bg-blurrycar">
         <div class="container" style="padding-top: 100px; padding-bottom: 100px;">
             <div class="row">
                 <div class="col-12 text-center">
@@ -86,7 +109,7 @@
 
 
                 <!-- ERSTE KACHEL -->
-                <div class="col-lg-4 col-12 mb-3 mx-1 p-4 rounded bg-light text-dark-emphasis" style="">
+                <div class="col-lg-5 col-10 mb-3 mx-1 p-4 bg-light text-dark-emphasis">
                     <div class="row text-center">
                         <div class="col-12">
                             <h4 class="fw-bold text-dark">All inclusive</h4>
@@ -105,18 +128,20 @@
                         <li>Gratis Pflegeset</li>
                     </ul>
                     <p class="mt-4">
-                        <button type="button" class="fw-bold btn btn-dark" style="width: 100%;">Termin
-                            vereinbaren</button>
+                        <a href="#contact"><button type="button" class="fw-bold btn btn-dark"
+                                style="width: 100%;">Termin
+                                vereinbaren</button></a>
+
                     </p>
                     </p>
                 </div>
 
 
                 <!-- ZWEITE KACHEL -->
-                <div class="col-lg-4 col-12 mb-3 mx-1 p-4 rounded bg-dark text-white-50">
+                <div class="col-lg-5 col-10 mb-3 mx-1 p-4 bg-light text-dark-emphasis">
                     <div class="row text-center">
                         <div class="col-12">
-                            <h4 class="fw-bold text-light">Individuell</h4>
+                            <h4 class="fw-bold text-dark">Individuell</h4>
                             <p class="">Wähle die passende Leistung für dich</p>
                         </div>
                     </div>
@@ -130,12 +155,13 @@
                         <li>.</li>
                     </ul>
                     <p class="mt-4">
-                        <button type="button" class="fw-bold btn btn-light" style="width: 100%;">Termin
-                            vereinbaren</button>
+                        <a href="#contact"><button type="button" class="fw-bold btn btn-dark"
+                                style="width: 100%;">Termin
+                                vereinbaren</button></a>
+
                     </p>
                     </p>
                 </div>
-
 
             </div>
         </div>

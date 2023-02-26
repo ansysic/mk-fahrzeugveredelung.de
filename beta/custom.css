@@ -91,5 +91,12 @@ li {
 }
 
 .btn {
-    border-radius: 0!important;
+    border-radius: 0 !important;
+}
+
+.bg-blurrycar {
+    background-image: url(img/blurry-noise-background.webp);
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
