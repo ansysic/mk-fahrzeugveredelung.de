@@ -629,3 +629,106 @@ dialog {
     transform: none;
   }
 }
+
+/* Typografie: breite Archivo für Überschriften (Motorsport-Anmutung),
+   Manrope für Fließtext (wie auf der Original-Framer-Seite) */
+@font-face {
+  font-family: 'Archivo Expanded';
+  src: url('assets/archivo-expanded.woff2') format('woff2');
+  font-weight: 500 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: Manrope;
+  src: url('assets/manrope.woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+}
+:root {
+  --font-display: 'Archivo Expanded', 'Arial Black', Arial, sans-serif;
+  --font-body: Manrope, 'Helvetica Neue', Arial, sans-serif;
+}
+body {
+  font-family: var(--font-body);
+  font-feature-settings: 'ss01';
+}
+h1,
+h2,
+.brand,
+.group-title,
+.location-caption > strong,
+.coating-card h3,
+.service-card h3 {
+  font-family: var(--font-display);
+}
+h1 {
+  font-weight: 800;
+  letter-spacing: -.02em;
+  font-size: clamp(36px, 4.6vw, 56px);
+}
+h2 {
+  font-weight: 700;
+  letter-spacing: -.02em;
+  font-size: clamp(28px, 3.6vw, 44px);
+}
+h3 {
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+.service-card h3,
+.coating-card h3 {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+.coating-card h3 {
+  font-size: 20px;
+}
+.brand {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .06em;
+}
+.hero p {
+  font-weight: 500;
+}
+.group-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+.location-caption > strong {
+  font-size: 22px;
+  letter-spacing: -.01em;
+}
+.btn,
+.submit,
+.contact-button,
+.route-link {
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+nav {
+  font-weight: 500;
+}
+.faq summary {
+  font-weight: 700;
+}
+p,
+.answer {
+  line-height: 1.7;
+  font-weight: 500;
+}
+@media (max-width: 809px) {
+  .brand {
+    font-size: 12.5px;
+    letter-spacing: .04em;
+  }
+  h2 {
+    font-size: clamp(24px, 7vw, 32px);
+  }
+  h1 {
+    font-size: clamp(32px, 9vw, 40px);
+  }
+}
