@@ -1,0 +1,600 @@
+/* Modernisierung – sanfte Überarbeitung über styles.css.
+   Farben, Inhalte und Aufbau bleiben gleich; Rundungen, Tiefe,
+   Typografie und Interaktionen werden zeitgemäßer. */
+:root {
+  --green: #42ff19;
+  --green-soft: #42ff1926;
+  --ink: #16181b;
+  --muted: #5d6166;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --shadow: 0 1px 2px #0000000d, 0 8px 24px -8px #00000026;
+  --shadow-lift: 0 2px 4px #00000012, 0 22px 44px -16px #00000040;
+}
+body {
+  color: var(--ink);
+  text-rendering: optimizeLegibility;
+}
+::selection {
+  background: var(--green);
+  color: #000;
+}
+
+/* Header: Glas-Effekt statt hartem Verlauf */
+header {
+  background: #0d0d0fcc;
+  backdrop-filter: saturate(160%) blur(16px);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+  border-bottom: 1px solid #ffffff14;
+  transition: background .3s, box-shadow .3s;
+}
+header.scrolled {
+  background: #0b0b0ce6;
+  box-shadow: 0 10px 30px -12px #000a;
+}
+.brand {
+  font-weight: 600;
+  letter-spacing: .02em;
+  font-size: 15px;
+}
+.brand::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  border-radius: 2px;
+  background: var(--green);
+  transform: rotate(45deg) translateY(-2px);
+}
+nav {
+  font-size: 15px;
+  gap: 30px;
+}
+nav a:not(.contact-button) {
+  position: relative;
+  color: #ffffffcc;
+}
+nav a:not(.contact-button)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s var(--ease);
+}
+nav a:not(.contact-button):hover {
+  color: #fff;
+}
+nav a:not(.contact-button):hover::after {
+  transform: scaleX(1);
+}
+.contact-button {
+  border-radius: 999px;
+  padding: 10px 20px;
+  transition: background .2s, transform .2s var(--ease), box-shadow .2s;
+}
+.contact-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px -6px #42ff19aa;
+}
+
+/* Typografie: flüssige Größen, ruhiger Rhythmus */
+h1 {
+  font-size: clamp(42px, 5vw, 60px);
+  letter-spacing: -.035em;
+  font-weight: 700;
+}
+h2 {
+  font-size: clamp(34px, 4.2vw, 52px);
+  letter-spacing: -.035em;
+  font-weight: 700;
+  margin-bottom: 56px;
+}
+h2::after {
+  content: '';
+  display: block;
+  width: 44px;
+  height: 4px;
+  margin: 20px auto 0;
+  border-radius: 4px;
+  background: var(--green);
+}
+dialog h2::after {
+  display: none;
+}
+h3 {
+  letter-spacing: -.015em;
+}
+
+/* Hero */
+.hero p {
+  color: #3a3d42;
+  font-size: clamp(19px, 2vw, 23px);
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 38px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 26px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform .25s var(--ease), box-shadow .25s, background .25s, color .25s;
+}
+.btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform .25s var(--ease);
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn:hover svg {
+  transform: translateX(3px);
+}
+.btn-primary {
+  background: #111;
+  color: #fff;
+  box-shadow: 0 10px 24px -10px #000c;
+}
+.btn-primary svg {
+  color: var(--green);
+}
+.btn-primary:hover {
+  background: #000;
+  box-shadow: 0 16px 30px -12px #000;
+}
+.btn-ghost {
+  background: #ffffffb3;
+  color: #111;
+  border: 1px solid #00000014;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.btn-ghost:hover {
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+/* Leistungen */
+.services {
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+.service-card {
+  border-radius: var(--radius);
+  background: linear-gradient(#2c2c2e, #1b1b1d);
+  border: 1px solid #ffffff12;
+  transition: transform .4s var(--ease), border-color .4s, box-shadow .4s;
+}
+.service-card img {
+  transition: transform .7s var(--ease);
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: #42ff1959;
+  box-shadow: 0 24px 50px -24px #42ff1940;
+}
+.service-card:hover img {
+  transform: scale(1.04);
+}
+.service-card > div {
+  padding: 24px;
+  position: relative;
+  background: inherit;
+}
+.service-card p {
+  color: #b9bcc1;
+}
+
+/* Versiegelungen */
+.coatings {
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+.coating-grid {
+  gap: 28px;
+}
+.coating-card {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform .4s var(--ease), box-shadow .4s;
+}
+.coating-card img {
+  transition: transform .7s var(--ease);
+}
+.coating-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+.coating-card:hover img {
+  transform: scale(1.03);
+}
+.coating-card > div {
+  padding: 24px 26px 28px;
+  position: relative;
+  background: #fff;
+}
+.coating-card h3 {
+  font-size: 22px;
+}
+.coating-card h3::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 4px var(--green-soft);
+  vertical-align: 2px;
+}
+.coating-card p {
+  color: var(--muted);
+}
+
+/* Galerie: weiche Kanten links/rechts */
+.gallery {
+  padding: 90px 0 100px;
+}
+.gallery-window,
+.reviews-window {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+.gallery-window {
+  margin: 16px 0;
+}
+.gallery-set {
+  gap: 16px;
+  padding-right: 16px;
+}
+.gallery-item {
+  border-radius: var(--radius);
+  cursor: zoom-in;
+}
+.gallery-item img {
+  transition: transform .7s var(--ease), filter .4s;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.06);
+}
+
+/* FAQ: klare Karten statt loser Zeilen */
+.faq {
+  padding: 90px 24px 100px;
+}
+.faq .container {
+  max-width: 860px;
+}
+.group-title {
+  font-size: 15px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 0 0 18px;
+  text-align: left;
+}
+.faq-group {
+  margin-bottom: 56px;
+}
+.faq details {
+  margin-bottom: 10px;
+  background: #ffffffb3;
+  border: 1px solid #0000000d;
+  border-radius: var(--radius-sm);
+  transition: background .25s, box-shadow .25s, border-color .25s;
+}
+.faq details:hover {
+  background: #fff;
+}
+.faq details[open] {
+  background: #fff;
+  box-shadow: var(--shadow);
+  border-color: transparent;
+}
+.faq summary {
+  padding: 20px 64px 20px 24px;
+}
+.faq summary::before {
+  content: '';
+  left: auto;
+  right: 18px;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  border-radius: 50%;
+  background: #00000010 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") center / 16px no-repeat;
+  transform: none;
+  transition: background-color .25s, transform .3s var(--ease);
+}
+.faq summary::after {
+  display: none;
+}
+.faq details[open] summary::before {
+  background-color: var(--green);
+  transform: rotate(180deg);
+}
+.answer {
+  padding: 0 64px 24px 24px;
+  color: var(--muted);
+}
+
+/* Kontakt */
+.contact {
+  padding: 90px 24px 100px;
+}
+.contact h2 {
+  margin-bottom: 56px;
+}
+.location-map {
+  border-radius: var(--radius);
+  border-color: #ffffff17;
+  background: #1c1c1e;
+  transition: transform .4s var(--ease), border-color .4s;
+}
+.location-map:hover {
+  transform: translateY(-4px);
+  border-color: #42ff1959;
+}
+.location-caption {
+  background: linear-gradient(#1c1c1e, #1c1c1e 75%, #1c1c1e00);
+}
+.route-link {
+  border-radius: 999px;
+  padding: 9px 16px;
+}
+.contact-grid {
+  gap: 48px;
+  align-items: start;
+}
+.addresses > a {
+  padding: 18px 20px;
+  margin-bottom: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #ffffff12;
+  background: #ffffff08;
+  transition: background .25s, border-color .25s;
+}
+.addresses > a:hover {
+  background: #ffffff0f;
+  border-color: #ffffff26;
+}
+.addresses p {
+  color: #b9bcc1;
+}
+.addresses .phone,
+.addresses .email {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.addresses .phone {
+  margin-top: 24px;
+  font-size: 20px;
+}
+.contact-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #000;
+}
+.contact-icon svg {
+  width: 18px;
+  height: 18px;
+}
+.form-wrap {
+  padding: 32px;
+  border-radius: var(--radius);
+  background: #ffffff08;
+  border: 1px solid #ffffff12;
+}
+.form-wrap h3 {
+  margin-bottom: 22px;
+  line-height: 1.35;
+}
+form input,
+form textarea {
+  font-size: 16px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #ffffff1f;
+  background: #0f0f10;
+  color: #fff;
+  margin-bottom: 12px;
+  transition: border-color .2s, box-shadow .2s;
+  color-scheme: dark;
+}
+form input::placeholder,
+form textarea::placeholder {
+  color: #8a8d92;
+}
+form input:hover,
+form textarea:hover {
+  border-color: #ffffff38;
+}
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 4px var(--green-soft);
+}
+form textarea {
+  height: 130px;
+}
+.submit {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px 20px;
+  border-radius: 999px;
+  background: var(--green);
+  transition: background .2s, transform .25s var(--ease), box-shadow .25s;
+}
+.submit:hover {
+  background: #70ff4e;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px -10px #42ff19cc;
+}
+.form-note,
+#form-status {
+  color: #9a9da2;
+  font-size: 13px;
+}
+
+/* Bewertungen */
+.reviews {
+  padding: 90px 0 100px;
+}
+.review-card {
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid #0000000a;
+  transition: transform .4s var(--ease), box-shadow .4s;
+}
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+.reviews-window {
+  padding: 16px 0 28px;
+}
+.avatar {
+  background: linear-gradient(135deg, #2a2a2c, #000);
+  color: var(--green);
+  font-weight: 600;
+}
+.stars {
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+.review-card p {
+  color: var(--muted);
+}
+
+/* Footer */
+footer {
+  align-items: center;
+  padding: 28px 40px;
+  font-size: 15px;
+  color: #c9ccd0;
+  border-top: 1px solid #ffffff10;
+}
+footer button {
+  font-size: 15px;
+  transition: color .2s;
+}
+footer button:hover {
+  color: var(--green);
+}
+
+/* Dialoge */
+dialog {
+  border-radius: 18px;
+  box-shadow: 0 30px 80px -20px #000;
+}
+#lightbox {
+  border-radius: var(--radius);
+}
+
+/* Einblendungen: kürzerer Weg, weicher */
+.motion .reveal {
+  transform: translateY(28px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+}
+
+@media (max-width: 809px) {
+  nav {
+    background: #0d0d0ff2;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid #ffffff14;
+  }
+  nav a:not(.contact-button)::after {
+    display: none;
+  }
+  .contact-button {
+    padding: 13px 20px;
+  }
+  h2 {
+    margin-bottom: 36px;
+  }
+  h2::after {
+    margin-top: 16px;
+  }
+  .hero-actions {
+    margin-top: 30px;
+  }
+  .services,
+  .coatings,
+  .faq,
+  .contact {
+    padding-top: 60px;
+    padding-bottom: 64px;
+  }
+  .gallery,
+  .reviews {
+    padding: 60px 0 64px;
+  }
+  .gallery-window,
+  .reviews-window {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .faq summary {
+    padding: 18px 56px 18px 18px;
+  }
+  .faq summary::before {
+    left: auto;
+    right: 14px;
+    top: 50%;
+  }
+  .answer {
+    padding: 0 18px 20px;
+  }
+  .form-wrap {
+    padding: 22px;
+  }
+  .addresses .email {
+    font-size: 15px;
+    overflow-wrap: normal;
+  }
+  .addresses .phone,
+  .addresses .email {
+    padding: 14px 16px;
+  }
+  footer {
+    padding: 24px;
+  }
+}
+@media (hover: none) {
+  .service-card:hover,
+  .coating-card:hover,
+  .review-card:hover,
+  .location-map:hover {
+    transform: none;
+  }
+}
