@@ -38,15 +38,15 @@ header.scrolled {
   letter-spacing: .02em;
   font-size: 15px;
 }
-.brand::before {
-  content: '';
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-right: 10px;
-  border-radius: 2px;
-  background: var(--green);
-  transform: rotate(45deg) translateY(-2px);
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-logo {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 nav {
   font-size: 15px;
@@ -560,6 +560,9 @@ dialog {
   }
   nav a:not(.contact-button)::after {
     display: none;
+  }
+  .brand-logo {
+    height: 32px;
   }
   .contact-button {
     padding: 13px 20px;
