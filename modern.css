@@ -455,6 +455,10 @@ form input[type="date"] {
   min-width: 0;
   max-width: 100%;
   text-align: left;
+  /* ohne native Darstellung sitzt der Wert oben – per Padding mittig setzen */
+  padding-top: 14px;
+  padding-bottom: 14px;
+  line-height: 22px;
 }
 form input[type="date"]::-webkit-date-and-time-value {
   text-align: left;
